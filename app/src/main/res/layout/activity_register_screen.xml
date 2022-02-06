@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".RegisterScreen">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGISTER"
+                android:layout_marginTop="50dp"
+                android:textSize="35sp"
+                android:fontFamily="@font/sfbold"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="25dp"
+                android:gravity="center"
+                android:layout_marginEnd="25dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/avatar_register"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#2196F3"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/null_avatar"/>
+
+                    <ImageView
+                        android:id="@+id/pick_avater_register"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end|bottom"
+                        android:src="@drawable/ic_baseline_camera_alt_24"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"/>
+                <RelativeLayout
+                    android:background="@drawable/bg_edit_text"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/icon_email"
+                        android:layout_width="30dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_email" />
+
+                    <EditText
+                        android:id="@+id/email_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toEndOf="@+id/icon_email"
+                        android:background="@android:color/transparent"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        tools:ignore="HardcodedText" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:background="@drawable/bg_edit_text"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/icon_name"
+                        android:layout_width="30dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_account_circle_24" />
+
+                    <EditText
+                        android:id="@+id/name_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toEndOf="@+id/icon_name"
+                        android:background="@android:color/transparent"
+                        android:hint="Full name"
+                        android:inputType="textCapWords|textPersonName"
+                        android:singleLine="true"
+                        tools:ignore="HardcodedText" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:id="@+id/layout_dob"
+                        android:background="@drawable/bg_edit_text"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/icon_dob"
+                            android:layout_width="30dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_baseline_calendar_month_24" />
+
+                        <EditText
+                            android:id="@+id/dob_register"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_toEndOf="@+id/icon_dob"
+                            android:background="@android:color/transparent"
+                            android:enabled="true"
+                            android:hint="dd/mm/yyyy"
+                            tools:ignore="HardcodedText" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layout_gender"
+                        android:background="@drawable/bg_edit_text"
+                        android:layout_marginBottom="15dp"
+                        android:layout_toEndOf="@id/layout_dob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/icon_gender"
+                            android:layout_width="30dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_baseline_male_24" />
+
+                        <Spinner
+                            android:id="@+id/gender_register"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_toEndOf="@+id/icon_gender"
+                            android:background="@android:color/transparent"
+                            android:hint="Gender"
+                            tools:ignore="HardcodedText" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:background="@drawable/bg_edit_text"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/icon_phone"
+                        android:layout_width="30dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_contact_phone_24" />
+
+                    <EditText
+                        android:id="@+id/phone_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toEndOf="@+id/icon_phone"
+                        android:background="@android:color/transparent"
+                        android:hint="Phone"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        tools:ignore="HardcodedText" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:background="@drawable/bg_edit_text"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/icon_address"
+                        android:layout_width="30dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toEndOf="@+id/country_register"
+                        android:src="@drawable/ic_baseline_location_city_24" />
+
+                    <EditText
+                        android:id="@+id/address_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toEndOf="@+id/icon_address"
+                        android:background="@android:color/transparent"
+                        android:hint="Address"
+                        android:inputType="textCapWords"
+                        android:singleLine="true"
+                        tools:ignore="HardcodedText" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:background="@drawable/bg_edit_text"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/icon_passs"
+                        android:layout_width="30dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_vpn_key_24" />
+
+                    <EditText
+                        android:id="@+id/password_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toEndOf="@+id/icon_passs"
+                        android:background="@android:color/transparent"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        tools:ignore="HardcodedText" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/done_register"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_button"
+                android:text="REGISTER"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="10dp"
+                android:src="#009688"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

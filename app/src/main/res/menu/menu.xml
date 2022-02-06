@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_nav_home"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/bottom_nav_message"
+        android:title="Message"
+        android:icon="@drawable/ic_baseline_message_24"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/bottom_nav_translate"
+        android:title="Message"
+        android:icon="@drawable/ic_baseline_translate_24"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/bottom_nav_manage_account"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_manage_accounts_24"
+        tools:ignore="HardcodedText" />
+</menu>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".HomeScreen"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_vertical"
+        android:background="@android:color/transparent">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="#2196f3"
+            android:src="@drawable/null_avatar"/>
+        <TextView
+            android:id="@+id/name_home"
+            android:layout_marginStart="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            tools:ignore="HardcodedText" />
+        <RelativeLayout
+            android:gravity="center_vertical|end"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="20dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/notification_home"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_baseline_notifications_24" />
+            <TextView
+                android:id="@+id/notification_count"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bg_count_notify"
+                android:text="20"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true"
+                android:layout_alignEnd="@id/notification_home"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/container_home_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            android:layout_alignParentBottom="true">
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_nav_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_nav"
+                android:layout_marginBottom="7dp"
+                app:elevation="0dp"
+                app:menu="@menu/menu" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/drawable-v24/bg_nav.xml" value="0.37864583333333335" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/drawable/bg_border.xml" value="0.2525" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/drawable/bg_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/drawable/bg_count_notify.xml" value="0.37864583333333335" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/drawable/bg_edit_text.xml" value="0.26614583333333336" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.37864583333333335" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_all_people_screen.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_dash_board_screen.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_edit_profile_screen.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_home_screen.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_login_screen.xml" value="0.25" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_maps_direction.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_register_screen.xml" value="0.25" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/fragment_message.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/fragment_notify.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/fragment_profile.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/fragment_translate.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/listview_friends.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/listview_request.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/listview_users.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/layout/notification_view.xml" value="0.3625" />
+        <entry key="..\:/ProjectIII/TravelApp/app/src/main/res/menu/menu.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
