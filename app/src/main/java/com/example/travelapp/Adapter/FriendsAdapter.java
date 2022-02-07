@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.example.travelapp.DirectionActivity;
 import com.example.travelapp.GGMaps;
 import com.example.travelapp.R;
 import com.example.travelapp.model.Users;
@@ -69,6 +70,14 @@ public class FriendsAdapter extends ArrayAdapter<Users> {
             public void onClick(View v) {
 //                Toast.makeText(activity, "Click"+users.getUid(), Toast.LENGTH_SHORT).show();
                 activity.startActivity(new Intent(activity, GGMaps.class).putExtra("USER_FRIENDS_UID",users));
+            }
+        });
+
+        ImageButton direction_user_friends = view.findViewById(R.id.direction_user_friends);
+        direction_user_friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.startActivity(new Intent(activity, DirectionActivity.class).putExtra("USER_FRIENDS_UID",users));
             }
         });
 

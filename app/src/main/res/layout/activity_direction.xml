@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GGMaps">
+    android:orientation="vertical"
+    tools:context=".DirectionActivity">
     <fragment
         android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         map:cameraBearing="112.5"
         map:cameraTargetLat="21.00680495566101"
         map:cameraTargetLng="105.84345786268916"
@@ -23,7 +24,10 @@
         map:uiScrollGestures="true"
         map:uiTiltGestures="true"
         map:uiZoomControls="true"
-        map:uiZoomGestures="true">
-    </fragment>
-
-</FrameLayout>
+        map:uiZoomGestures="true" />
+    <ImageButton
+        android:id="@+id/getDirection"
+        android:src="@drawable/ic_baseline_directions_24"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+</LinearLayout>

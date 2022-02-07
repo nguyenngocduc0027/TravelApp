@@ -16,9 +16,13 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.travelapp.directionhelpers.FetchURL;
+import com.example.travelapp.directionhelpers.TaskLoadedCallback;
 import com.example.travelapp.maps.IBaseGpsListener;
 import com.example.travelapp.model.MyLocation;
 import com.example.travelapp.model.Users;
@@ -32,6 +36,9 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,7 +48,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
-public class GGMaps extends AppCompatActivity implements OnMapReadyCallback, IBaseGpsListener {
+public class GGMaps extends AppCompatActivity implements OnMapReadyCallback, IBaseGpsListener,GoogleMap.OnPolylineClickListener,
+        GoogleMap.OnPolygonClickListener {
 
     FirebaseDatabase database;
     FirebaseAuth auth;
@@ -50,11 +58,13 @@ public class GGMaps extends AppCompatActivity implements OnMapReadyCallback, IBa
     Users friends_user;
 
     LocationManager manager;
-    Marker myMarker;
 
-    MyLocation myLocation;
+    MyLocation myLocation, myAdminLocation;
+
+    MarkerOptions place1,place2;
 
 
+    int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +84,8 @@ public class GGMaps extends AppCompatActivity implements OnMapReadyCallback, IBa
         Intent friend_user_uid = getIntent();
         friends_user = (Users) friend_user_uid.getSerializableExtra("USER_FRIENDS_UID");
         assert friends_user != null;
+
+
         
         getLocationUpdates();
 //        readChanges();
@@ -129,6 +141,7 @@ public class GGMaps extends AppCompatActivity implements OnMapReadyCallback, IBa
         }
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -145,17 +158,36 @@ public class GGMaps extends AppCompatActivity implements OnMapReadyCallback, IBa
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         googleMap.setMyLocationEnabled(true);
-
         reference.child("Location").child(friends_user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     myLocation = snapshot.getValue(MyLocation.class);
+                    count = count+1;
+                    if (count < 5) {
+                        googleMap.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(myLocation.getLatitude(), myLocation.getLongitude())));
+                    }
                     if (myLocation != null){
                         LatLng here = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
+                        place2 = new MarkerOptions().position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude())).title(friends_user.getName());
                         googleMap.clear();
                         googleMap.addMarker(new MarkerOptions().position(here).title(friends_user.getName()));
-                        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(here,15));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        reference.child("Location").child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    myAdminLocation = snapshot.getValue(MyLocation.class);
+                    if (myAdminLocation != null){
+                        place1 = new MarkerOptions().position(new LatLng(myAdminLocation.getLatitude(), myAdminLocation.getLongitude())).title("Me");
                     }
                 }
             }
@@ -199,4 +231,15 @@ public class GGMaps extends AppCompatActivity implements OnMapReadyCallback, IBa
     public void onGpsStatusChanged(int event) {
 
     }
+
+    @Override
+    public void onPolygonClick(@NonNull Polygon polygon) {
+
+    }
+
+    @Override
+    public void onPolylineClick(@NonNull Polyline polyline) {
+
+    }
+
 }

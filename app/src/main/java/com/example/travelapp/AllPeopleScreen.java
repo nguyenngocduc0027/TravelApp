@@ -34,7 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class AllPeopleScreen extends AppCompatActivity implements IBaseGpsListener {
+public class AllPeopleScreen extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseDatabase database;
@@ -53,7 +53,6 @@ public class AllPeopleScreen extends AppCompatActivity implements IBaseGpsListen
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
-        GetLocation();
 
 
         list_users = findViewById(R.id.list_users);
@@ -105,67 +104,6 @@ public class AllPeopleScreen extends AppCompatActivity implements IBaseGpsListen
             }
         });
     }
-
-    public void GetLocation() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.ACCESS_NOTIFICATION_POLICY) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.ACCESS_NOTIFICATION_POLICY},1000);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                && checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1000);
-        } else {ShowLocation();}
-    }
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == 1000) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                ShowLocation();
-            } else {
-                Toast.makeText(this, "Permission not granted!", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    private void ShowLocation() {
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,3000, 1,this);
-        } else {
-            Toast.makeText(this, "Enable GPS!", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-        }
-    }
-
-
-    @Override
-    public void onLocationChanged(Location location) {
-        reference.child("Location").child(auth.getUid()).child("latitude").setValue(location.getLatitude());
-        reference.child("Location").child(auth.getUid()).child("longitude").setValue(location.getLongitude());
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-        //empty
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-        //empty
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-        //empty
-    }
-
-    @Override
-    public void onGpsStatusChanged(int event) {
-        //empty
-    }
-
 
     @Override
     protected void onResume() {

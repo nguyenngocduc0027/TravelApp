@@ -46,13 +46,24 @@
                 tools:ignore="HardcodedText" />
         </LinearLayout>
     </LinearLayout>
-    <ImageButton
-        android:id="@+id/location_user_friends"
-        android:layout_width="40dp"
-        android:layout_height="match_parent"
+    <LinearLayout
         android:layout_gravity="center_vertical|right"
-        android:layout_marginEnd="10dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_baseline_location_on_24"
-        tools:ignore="RtlHardcoded" />
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:ignore="RtlHardcoded">
+        <ImageButton
+            android:id="@+id/location_user_friends"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_location_on_24" />
+        <ImageButton
+            android:id="@+id/direction_user_friends"
+            android:layout_width="40dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_baseline_directions_24"
+            android:background="@android:color/transparent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 </FrameLayout>
