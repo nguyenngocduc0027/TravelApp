@@ -275,8 +275,8 @@ public class EditProfileScreen extends AppCompatActivity implements IBaseGpsList
 
     @Override
     public void onLocationChanged(Location location) {
-        reference.child("Location").child(auth.getUid()).child("lat").setValue(location.getLatitude());
-        reference.child("Location").child(auth.getUid()).child("lng").setValue(location.getLongitude());
+        reference.child("Location").child(auth.getUid()).child("latitude").setValue(location.getLatitude());
+        reference.child("Location").child(auth.getUid()).child("longitude").setValue(location.getLongitude());
     }
 
     @Override

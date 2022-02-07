@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.example.travelapp.GGMaps;
 import com.example.travelapp.R;
 import com.example.travelapp.model.Users;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,8 +67,8 @@ public class FriendsAdapter extends ArrayAdapter<Users> {
         location_user_friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, "Click"+users.getUid(), Toast.LENGTH_SHORT).show();
-//                activity.startActivity(new Intent(activity, MapsActivity.class).putExtra("USER_FRIENDS",users));
+//                Toast.makeText(activity, "Click"+users.getUid(), Toast.LENGTH_SHORT).show();
+                activity.startActivity(new Intent(activity, GGMaps.class).putExtra("USER_FRIENDS_UID",users));
             }
         });
 
