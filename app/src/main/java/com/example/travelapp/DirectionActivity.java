@@ -156,6 +156,8 @@ public class DirectionActivity extends FragmentActivity implements OnMapReadyCal
                         if (count < 3){
                             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(user_ll,15));
                         }
+                        mMap.clear();
+                        mMap.addMarker(new MarkerOptions().position(user_ll).title(friends_user.getName()));
                     }
                 }
             }
@@ -287,7 +289,7 @@ public class DirectionActivity extends FragmentActivity implements OnMapReadyCal
         //Add Marker on route ending position
         MarkerOptions endMarker = new MarkerOptions();
         endMarker.position(polylineEndLatLng);
-        endMarker.title("Destination");
+        endMarker.title(friends_user.getName());
         mMap.addMarker(endMarker);
     }
 
