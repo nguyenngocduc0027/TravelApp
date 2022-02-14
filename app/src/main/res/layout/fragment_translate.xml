@@ -1,162 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.TranslateFragment">
+    android:padding="20dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ScrollView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Translate Page"
+        android:textSize="30sp"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/idEdtLanguage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:orientation="vertical">
-            <!-- TODO: Add here -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="adasdasd"
-                tools:ignore="HardcodedText" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Enter the text you want to translate"
+        android:padding="4dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
 
-        </LinearLayout>
-    </ScrollView>
-</FrameLayout>
+    <Button
+        android:id="@+id/idBtnTranslate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVTranslated"
+        android:layout_centerInParent="true"
+        android:text="Translate"/>
+
+    <TextView
+        android:id="@+id/idTVTranslated"
+        android:layout_below="@id/idEdtLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal"
+        android:text="Translation"
+        android:textAlignment="center"
+        android:textSize="20sp"/>
+
+</RelativeLayout>
