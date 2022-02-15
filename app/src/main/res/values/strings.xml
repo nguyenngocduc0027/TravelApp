@@ -6,4 +6,68 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="google_maps_key">AIzaSyDLmJGNCEuN824F9qlnDxzOpTR_P1Qlrmk</string>
+
+    <!-- Vocabulary Resource -->
+    <string-array name="numbers">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>20</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="vietNumbers">
+        <item>khong</item>
+        <item>một</item>
+        <item>hai</item>
+        <item>ba</item>
+        <item>bốn</item>
+        <item>năm</item>
+        <item>sáu</item>
+        <item>bảy</item>
+        <item>tám</item>
+        <item>chín</item>
+        <item>mười</item>
+        <item>hai mươi</item>
+        <item>một trăm</item>
+    </string-array>
+
+    <string-array name="word">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Please</item>
+        <item>Thank you</item>
+        <item>Excuse me!</item>
+        <item>It\'s Okay</item>
+        <item>I (don\'t) understand</item>
+        <item>How much does it cost?</item>
+        <item>good/bad</item>
+        <item>Help!</item>
+        <item>Hallo!</item>
+        <item>Good bye!</item>
+    </string-array>
+
+    <string-array name="translation">
+        <item>Khong</item>
+        <item>Có</item>
+        <item>Xin</item>
+        <item>Cảm ơn</item>
+        <item>Tôi xin lỗi!</item>
+        <item>Không sao đadu</item>
+        <item>Tôi (không) hiểu</item>
+        <item>Gía bao nhiêu?</item>
+        <item>tot/xấú</item>
+        <item>Xin giúp tôi!</item>
+        <item>Xin chào</item>
+        <item>Chào tạm biệt</item>
+    </string-array>
+
 </resources>

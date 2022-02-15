@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/topic"
+            android:text="Topic"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:textColor="@color/light_blue_600"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/expandable_layout"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/category1"
+                android:text="Category1"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_overlay"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/word1"
+                android:text="Word"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:layout_below="@+id/category1"
+                android:textColor="@color/black_overlay"
+                />
+
+            <TextView
+                android:id="@+id/translation1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Translation"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:layout_below="@+id/category1"
+                android:textColor="@color/black_overlay" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/word1"
+                android:id="@+id/category2"
+                android:text="Category2"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_overlay"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/word2"
+                android:text="Word"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:layout_below="@+id/category2"
+                android:textColor="@color/black_overlay"
+                />
+
+            <TextView
+                android:id="@+id/translation2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Translation"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:layout_below="@+id/category2"
+                android:textColor="@color/black_overlay" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
