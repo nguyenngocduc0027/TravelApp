@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,20 +22,24 @@
         android:id="@+id/idEdtLanguage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:hint="Enter the text you want to translate"
         android:padding="4dp"
+        android:inputType="text"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:layout_below="@id/destLang"/>
+        android:layout_below="@id/langPicker"/>
 
     <Button
         android:id="@+id/idBtnTranslate"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVTranslated"
         android:layout_centerInParent="true"
-        android:text="Translate"/>
+        android:text="Translate"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_blue_600"
+        />
 
     <TextView
         android:id="@+id/idTVTranslated"
@@ -49,44 +54,61 @@
         android:textSize="20sp"/>
 
     <LinearLayout
-        android:id="@+id/sourceLang"
+        android:id="@+id/langPicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idHeaderTranslate">
-        <TextView
-            android:id="@+id/labelSourceLang"
-            android:layout_width="200px"
-            android:layout_height="wrap_content"
-            android:text="Source"
-            />
+        android:layout_below="@id/idHeaderTranslate"
+        android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/idSpinnerSrcLang"
+        <LinearLayout
+            android:id="@+id/sourceLang"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:id="@+id/labelSourceLang"
+                android:layout_width="200px"
+                android:layout_height="match_parent"
+                android:text="Source"
+                />
+
+            <Spinner
+                android:id="@+id/idSpinnerSrcLang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/labelSourceLang"
+                />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/idBtnSwap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/labelSourceLang"
-            />
-    </LinearLayout>
+            android:layout_below="@id/sourceLang"
+            android:layout_above="@id/destLang"
+            android:src="@drawable/ic_swap_arrows"
+            app:tint="@color/light_blue_900"
+            android:backgroundTint="@color/white" />
 
-    <LinearLayout
-        android:id="@+id/destLang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sourceLang"
-        android:layout_marginTop="10sp">
-        <TextView
-            android:id="@+id/labelDestLang"
-            android:layout_width="200px"
-            android:layout_height="wrap_content"
-            android:text="Destination"
-            />
-
-        <Spinner
-            android:id="@+id/idSpinnerDestLang"
+        <LinearLayout
+            android:id="@+id/destLang"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/labelSourceLang"
-            />
+            android:layout_height="40dp"
+            android:layout_below="@id/sourceLang"
+            android:layout_marginTop="0dp">
+            <TextView
+                android:id="@+id/labelDestLang"
+                android:layout_width="200px"
+                android:layout_height="match_parent"
+                android:text="Destination"
+                />
+
+            <Spinner
+                android:id="@+id/idSpinnerDestLang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/labelSourceLang"
+                />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
