@@ -7,6 +7,12 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="google_maps_key">AIzaSyDLmJGNCEuN824F9qlnDxzOpTR_P1Qlrmk</string>
 
+    <string-array name="languages_array">
+        <item>English</item>
+        <item>Vietnamese</item>
+        <item>German</item>
+    </string-array>
+
     <!-- Vocabulary Resource -->
     <string-array name="numbers">
         <item>0</item>

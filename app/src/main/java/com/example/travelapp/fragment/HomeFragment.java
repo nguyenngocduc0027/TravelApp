@@ -76,11 +76,11 @@ public class HomeFragment extends Fragment {
 
         // TODO: Other Homescreen elements
         contentList.add(new HomeContent("Market", "Item", "Price", "List of items", "List of prices", ""));
-        contentList.add(new HomeContent("Topic3", "Test1", "Test2", "Test3", "Test4", ""));
-        contentList.add(new HomeContent("Topic3", "Test1", "Test2", "Test3", "Test4", ""));
-        contentList.add(new HomeContent("Topic3", "Test1", "Test2", "Test3", "Test4", ""));
-        contentList.add(new HomeContent("Topic3", "Test1", "Test2", "Test3", "Test4", ""));
-        contentList.add(new HomeContent("Topic3", "Test1", "Test2", "Test3", "Test4", ""));
+        contentList.add(new HomeContent("Covid News", "Test1", "Test2", "Test3", "Test4", ""));
+        contentList.add(new HomeContent("Topic4", "Test1", "Test2", "Test3", "Test4", ""));
+        contentList.add(new HomeContent("Topic5", "Test1", "Test2", "Test3", "Test4", ""));
+        contentList.add(new HomeContent("Topic6", "Test1", "Test2", "Test3", "Test4", ""));
+        contentList.add(new HomeContent("Topic7", "Test1", "Test2", "Test3", "Test4", ""));
     }
 
     private String getStringFromArray(String[] resource){
