@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -33,8 +35,11 @@ public class TranslateFragment extends Fragment {
     private TextView translatedTextView;
     private EditText edtTxt;
     private Button translateBtn;
+    private ImageButton swapBtn;
     private Spinner srcLngSpinner;
     private Spinner destLngSpinner;
+    private ArrayAdapter srcArrayAdapter;
+    private ArrayAdapter destArrayAdapter;
 
     private String selectedSrcLanguage = TranslateLanguage.GERMAN;
     private String selectedDestLanguage = TranslateLanguage.VIETNAMESE;
@@ -52,27 +57,39 @@ public class TranslateFragment extends Fragment {
         edtTxt = translate_fragment_view.findViewById(R.id.idEdtLanguage);
         translatedTextView = translate_fragment_view.findViewById(R.id.idTVTranslated);
         translateBtn = translate_fragment_view.findViewById(R.id.idBtnTranslate);
+        swapBtn = translate_fragment_view.findViewById(R.id.idBtnSwap);
         srcLngSpinner = translate_fragment_view.findViewById(R.id.idSpinnerSrcLang);
         destLngSpinner = translate_fragment_view.findViewById(R.id.idSpinnerDestLang);
 
         translateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String string = edtTxt.getText().toString();
-                System.out.println(string);
-                downloadModel(string);
+                translateText();
             }
         });
 
-        ArrayAdapter srcArrayAdapter = ArrayAdapter.createFromResource(getContext(), R.array.languages_array, android.R.layout.simple_spinner_item);
-        ArrayAdapter destArrayAdapter = ArrayAdapter.createFromResource(getContext(), R.array.languages_array, android.R.layout.simple_spinner_item);
+        swapBtn.setOnClickListener(v -> {
+            invert();
+        });
+
+        edtTxt.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    translateText();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        srcArrayAdapter = ArrayAdapter.createFromResource(getContext(), R.array.languages_array, android.R.layout.simple_spinner_item);
+        destArrayAdapter = ArrayAdapter.createFromResource(getContext(), R.array.languages_array, android.R.layout.simple_spinner_item);
         srcArrayAdapter.setDropDownViewResource(R.layout.dropdown_item);
         destArrayAdapter.setDropDownViewResource(R.layout.dropdown_item);
-        int srcPos = srcArrayAdapter.getPosition(mapCountryCodeToLanguage(selectedSrcLanguage));
-        int destPos = destArrayAdapter.getPosition(mapCountryCodeToLanguage(selectedDestLanguage));
 
-        srcLngSpinner.setAdapter(srcArrayAdapter);
-        srcLngSpinner.setSelection(srcPos);
+        changeAdapterPositionToCurrentLangs();
+
         srcLngSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -88,8 +105,6 @@ public class TranslateFragment extends Fragment {
             }
         });
 
-        destLngSpinner.setAdapter(destArrayAdapter);
-        destLngSpinner.setSelection(destPos);
         destLngSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -165,5 +180,29 @@ public class TranslateFragment extends Fragment {
             case "en": return "English";
         }
         return "English";
+    }
+
+    private void translateText() {
+        String string = edtTxt.getText().toString();
+        System.out.println(string);
+        downloadModel(string);
+    }
+
+    private void invert() {
+        String tmp = selectedSrcLanguage;
+        selectedSrcLanguage = selectedDestLanguage;
+        selectedDestLanguage = tmp;
+        setTranslateOptions();
+        setTranslator();
+        changeAdapterPositionToCurrentLangs();
+    }
+
+    private void changeAdapterPositionToCurrentLangs() {
+        int srcPos = srcArrayAdapter.getPosition(mapCountryCodeToLanguage(selectedSrcLanguage));
+        int destPos = destArrayAdapter.getPosition(mapCountryCodeToLanguage(selectedDestLanguage));
+        srcLngSpinner.setAdapter(srcArrayAdapter);
+        srcLngSpinner.setSelection(srcPos);
+        destLngSpinner.setAdapter(destArrayAdapter);
+        destLngSpinner.setSelection(destPos);
     }
 }
