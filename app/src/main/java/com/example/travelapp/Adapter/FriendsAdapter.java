@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.example.travelapp.ChatActivity;
 import com.example.travelapp.DirectionActivity;
 import com.example.travelapp.GGMaps;
 import com.example.travelapp.R;
@@ -85,7 +86,7 @@ public class FriendsAdapter extends ArrayAdapter<Users> {
         users_friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, "Friends", Toast.LENGTH_SHORT).show();
+                activity.startActivity(new Intent(activity, ChatActivity.class).putExtra("USER_FRIENDS_UID",users));
             }
         });
 
