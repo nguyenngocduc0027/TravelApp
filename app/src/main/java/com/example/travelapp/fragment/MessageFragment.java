@@ -75,22 +75,23 @@ public class MessageFragment extends Fragment {
                             Users usersFriends = dataSnapshot.getValue(Users.class);
                             assert usersFriends != null;
                             usersFriends.setUid(dataSnapshot.getKey());
-                            databaseReference.child("Status").child(dataSnapshot.getKey()).addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot snapshot1) {
-//                                            Log.d(TAG, "onDataChange: "+snapshot1.child("active").getValue());
-                                            if (snapshot1.child("active").getValue().equals(true)){
-                                                friendsAdapter.add(usersFriends);
-                                            } else if (snapshot1.child("active").getValue().equals(false)){
-                                                friendsAdapter.remove(usersFriends);
-                                            }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
-
-                                        }
-                                    });
+                            friendsAdapter.add(usersFriends);
+//                            databaseReference.child("Status").child(dataSnapshot.getKey()).addValueEventListener(new ValueEventListener() {
+//                                        @Override
+//                                        public void onDataChange(@NonNull DataSnapshot snapshot1) {
+////                                            Log.d(TAG, "onDataChange: "+snapshot1.child("active").getValue());
+//                                            if (snapshot1.child("active").getValue().equals(true)){
+//                                                friendsAdapter.add(usersFriends);
+//                                            } else if (snapshot1.child("active").getValue().equals(false)){
+//                                                friendsAdapter.remove(usersFriends);
+//                                            }
+//                                        }
+//
+//                                        @Override
+//                                        public void onCancelled(@NonNull DatabaseError error) {
+//
+//                                        }
+//                                    });
 
                         }
                     }
